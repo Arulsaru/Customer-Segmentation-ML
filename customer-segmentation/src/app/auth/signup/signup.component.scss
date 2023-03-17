@@ -1,0 +1,77 @@
+.login-image {
+    margin-left: 30px;
+    margin-top: 80px;
+    width: 350px;
+    height: 350px;
+}
+
+.main-container, 
+.password-container {
+    display: flex;
+}
+
+.row-container {
+    height: 100vh;
+    padding-top: 50px;
+    margin-left: 100px;
+}
+
+.right-container {
+    width: 500px;
+}
+
+
+#signup-button {
+    margin-top: 20px;
+    width: 300px;
+    background-color: #407BFF;
+    border-color: white;
+}
+
+.form-group,
+.form-check {
+    margin-top: 20px;
+}
+
+.form-control {
+    width: 300px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: black;
+    /* border-top: none !important; */
+}
+
+input.ng-invalid.ng-touched {
+    color: red;
+    border-color: red;
+    box-shadow: 0 0 0 0.2rem rgba(255, 112, 112, 0.737);
+}
+
+button:disabled {
+    cursor: not-allowed !important;
+    pointer-events: all !important;
+}
+
+#show-password-icon-one,
+#show-password-icon-two {
+    position: relative;
+    top: 57px;
+    right: 35px;
+    cursor: pointer;
+}
+
+.alert {
+    width: 300px;
+    position: absolute;
+    top: 540px;
+    left: 940px;
+}
+
+.error {
+    position: relative;
+    top: 10px;
+    bottom: 5px;
+    color: red;
+}

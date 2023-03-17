@@ -1,0 +1,28 @@
+<div class="main-container">
+  <div class="row-container">
+    <img src="assets/login-image.png" class="login-image">
+  </div>
+  <div class="row-container ml-1 right-container">
+    <form [formGroup]="loginForm">
+      <h2 id="heading">Login to your Account</h2> <br>
+      <div class="form-group">
+        <label class="mb-2">&emsp; Username</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="Enter username">
+        <small class="error" *ngIf="userName?.invalid && userName?.touched">username is required</small>
+        <!-- <span class="error" *ngIf="userName?.invalid">user name not found</span> -->
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <div class="form-group">
+        <label class="mb-2">&emsp; Password</label>
+        <mat-icon id="show-password-icon" (click)="togglePasswordVisibility()"
+          matSuffix>{{showPassword?'visibility_off':'visibility'}}</mat-icon>
+        <input type="password" formControlName="password" matInput [type]="showPassword ? 'text':'Password'"
+          class="form-control" placeholder="Enter password">
+        <small class="error" *ngIf="password?.invalid && password?.touched">password is required</small>
+        <!-- <a href="/#" id="forgot-password-link" class="link-dark small fw-bold">Forgot Password ?</a>  -->
+      </div>
+      <button id="login-button" class="btn btn-primary" [disabled]="loginForm.invalid">LOGIN</button>
+      <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signup" class="link-danger">Register</a></p>
+    </form>
+  </div>
+</div>

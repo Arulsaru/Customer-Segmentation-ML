@@ -21,7 +21,7 @@
         <small class="error" *ngIf="password?.invalid && password?.touched">password is required</small>
         <!-- <a href="/#" id="forgot-password-link" class="link-dark small fw-bold">Forgot Password ?</a>  -->
       </div>
-      <button id="login-button" class="btn btn-primary" [disabled]="loginForm.invalid">LOGIN</button>
+      <button id="login-button" class="btn btn-primary" (click)="login()" [disabled]="loginForm.invalid">LOGIN</button>
       <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/signup" class="link-danger">Register</a></p>
     </form>
   </div>

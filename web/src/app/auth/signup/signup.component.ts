@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, Validators, AbstractControl } from "@angular/forms";
 import { Router } from "@angular/router";
+import { AuthService } from "src/app/service/auth.service";
 
 @Component({
     selector: 'app-signup',
@@ -13,7 +14,7 @@ export class SignupComponent {
     showPasswordForReEnterPasswordField: boolean = false;
     isUserNameAlreadyAvailable: boolean = false;
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
 
     togglePasswordVisibility(): void {
         this.showPassword = !this.showPassword;
@@ -25,9 +26,11 @@ export class SignupComponent {
     }
 
     signUpForm = this.formBuilder.group({
-        userName: ['', [Validators.required, Validators.pattern(/[A-Za-z]/)]],
-        password: ['Arulsaru', [Validators.required, Validators.pattern(/[A-Za-z0-9]{8}[\d]{1}/)]],
-        reEnterPassword: ['Arulsaru', [Validators.required]],
+        userName: ['two', [Validators.required]],
+        // Validators.pattern(/[A-Za-z]/)
+        password: ['two', [Validators.required]],
+        // Validators.pattern(/[A-Za-z0-9]{8}[\d]{1}/)
+        reEnterPassword: ['Arulsaru143', [Validators.required]],
         email: ['saruarul154@gmail.com', [Validators.required, Validators.email]],
         phoneNumber: ['1234567890', [Validators.required, Validators.pattern(/[0-9]{9}/)]],
     });
@@ -52,4 +55,9 @@ export class SignupComponent {
         return this.signUpForm.get('phoneNumber')!;
     }
 
+    storeSignupDetails(): void {
+        this.authService.saveUserDetails(this.signUpForm.value).subscribe({
+            next: (res) => console.log(res)
+        });
+    }
 }

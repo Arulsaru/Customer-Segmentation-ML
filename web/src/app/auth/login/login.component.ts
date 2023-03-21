@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { AbstractControl, FormBuilder, FormControl, Validators } from "@angular/forms";
+import { AuthService } from "src/app/service/auth.service";
 
 @Component({
     selector: 'app-login',
@@ -10,7 +11,7 @@ import { AbstractControl, FormBuilder, FormControl, Validators } from "@angular/
 export class LoginComponent {
     showPassword: boolean = false;
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder, private authService: AuthService) { }
 
     togglePasswordVisibility(): void {
         this.showPassword = !this.showPassword;
@@ -27,5 +28,11 @@ export class LoginComponent {
 
     get password(): AbstractControl {
         return this.loginForm.get('password')!;
+    }
+
+    login(): void {
+        this.authService.loginUser(this.loginForm.value).subscribe({
+            next: (res) => console.log(res)
+        })
     }
 }

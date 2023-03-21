@@ -1,0 +1,16 @@
+[
+    {
+        "userName": "one",
+        "password": "one",
+        "reEnterPassword": "Arulsaru143",
+        "email": "saruarul154@gmail.com",
+        "phoneNumber": "1234567890"
+    },
+    {
+        "userName": "two",
+        "password": "two",
+        "reEnterPassword": "Arulsaru143",
+        "email": "saruarul154@gmail.com",
+        "phoneNumber": "1234567890"
+    }
+]

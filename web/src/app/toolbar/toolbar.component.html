@@ -1,0 +1,14 @@
+<mat-toolbar class="toolbar">
+    <button mat-icon-button [disableRipple]="true" (click)="toggleSideNav()"
+        class="icons"><mat-icon>menu</mat-icon></button>
+    <span class="example-spacer"></span>
+    <button mat-raised-button [matMenuTriggerFor]="logoutMenu" [disableRipple]="true" color="none" id="user-profile-btn"
+        class="icon-buttons">
+        <mat-icon color="none">person</mat-icon>
+        &nbsp; &nbsp;{{"name"}}
+        <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-menu #logoutMenu="matMenu" class="mat-menu mt-3" xPosition="before">
+    <button mat-menu-item><i class="fa fa-sign-out" (click)="logout()"></i>Logout</button>
+</mat-menu>

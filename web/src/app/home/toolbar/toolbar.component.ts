@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SideNavService } from '../service/side-nav.service';
+import { SideNavService } from '../../service/side-nav.service';
 
 @Component({
     selector: 'app-toolbar',

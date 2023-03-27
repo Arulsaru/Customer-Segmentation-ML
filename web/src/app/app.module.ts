@@ -8,8 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { ToolbarComponent } from './home/toolbar/toolbar.component';
+import { SideNavComponent } from './home/sidenav/sidenav.component';
+import { MainPageComponent } from './home/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SideNavComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

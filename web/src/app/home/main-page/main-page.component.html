@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="right-container">
+        <img src="assets\upload-pana.png" id="image">
+    </div>
+    <div class="left-container">
+        <h3><strong> UPLOAD YOUR DATASET HERE TO PROCEED THE SEGMENTATION</strong></h3>
+        <br>
+        <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+        <div class="file-upload">
+            {{fileName || "No file uploaded yet"}}
+            <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+                <mat-icon>attach_file</mat-icon>
+            </button> <br> <br> <br>
+            <button mat-raised-button [disabled]="!isFileUploaded" (click)="showResults()" id="upload-button">
+                Segment customers
+            </button>
+        </div>
+        <div class="alert alert-success confirm-alert" *ngIf="isFileUploaded && isButtonClicked" role="alert">
+            <b>File uploaded successfully...</b> <br> <hr> please wait few seconds till process being done
+        </div>
+    </div>
+</div>

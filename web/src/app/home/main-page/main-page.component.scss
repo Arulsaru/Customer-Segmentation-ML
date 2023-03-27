@@ -1,0 +1,32 @@
+#image {
+    width: 500px;
+    height: 500px;
+    margin-top: 20px;
+}
+
+.file-input {
+    display: none;
+}
+
+.container {
+    display: flex;
+}
+
+.left-container {
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+#upload-button, .upload-btn {
+    background-color: #4882fe;
+    color: white
+}
+
+.confirm-alert {
+    position: relative;
+    top: 40px;
+}
+
+#upload-button:disabled {
+    cursor: not-allowed;
+}
